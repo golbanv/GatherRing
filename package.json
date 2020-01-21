@@ -1,0 +1,17 @@
+{
+  "name": "gatherring",
+  "version": "1.0.0",
+  "description": "GatherRing",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.js"
+  },
+  "author": "Vladislav Golban",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.9"
+  }
+}
