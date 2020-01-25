@@ -15,12 +15,23 @@ const gatheringRoutes = require("./routes/gatherings");
 const indexRoutes = require("./routes/index");
 
 const app = express();
-const port = 4000;
+const port = process.env.PORT || 4000;
 
-mongoose.connect("mongodb://localhost/gathe_ring", {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-});
+mongoose
+  .connect(
+    "mongodb+srv://golbanv:971540237sat@cluster0-foyg5.mongodb.net/test?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useCreateIndex: true,
+      useUnifiedTopology: true
+    }
+  )
+  .then(() => {
+    console.log("Connected to db!!!");
+  })
+  .catch(err => {
+    console.log("ERROR:", err.message);
+  });
 
 app.set("view engine", "ejs");
 app.use(bodyParser.urlencoded({ extended: true }));
